@@ -8,7 +8,11 @@ const IMAGES = {
   SKLAD_PNG: 'https://images.unsplash.com/photo-1530480667809-b655d4dc3aaa',
   SKLAD_GIF: 'https://images.unsplash.com/photo-1612544409025-e1f6a56c1152',
   PORTFOLIO_1: 'https://images.unsplash.com/photo-1632187989763-c9c620420b4d',
-  PORTFOLIO_2: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b',
+  PORTFOLIO_2: 'https://images.unsplash.com/photo-1524834671419-aa7d41c1c657',
+  PORTFOLIO_3: 'https://images.unsplash.com/photo-1716835018054-5b13e5ef53b0',
+  PORTFOLIO_4: 'https://images.unsplash.com/photo-1729959884778-da26e3896ed7',
+  PORTFOLIO_5: 'https://images.unsplash.com/photo-1632187989763-c9c620420b4d',
+  PORTFOLIO_6: 'https://images.unsplash.com/photo-1601506521937-0121a7fc2a6b',
   PUBLIC_CR: 'https://images.unsplash.com/photo-1548450847-8a9a5cc3968f'
 };
 
