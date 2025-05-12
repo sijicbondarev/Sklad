@@ -236,7 +236,7 @@ Sklad Production — это независимый кинопродакшн, к�
     queryInput.value = '';
   };
   
-  const handleOrderSubmit = (e) => {
+  const handleOrderSubmit = async (e) => {
     e.preventDefault();
     
     // Get form data
@@ -248,39 +248,29 @@ Sklad Production — это независимый кинопродакшн, к�
       return;
     }
     
-    // Create readable message
-    const formattedMessage = `
-Хронометраж: ${timingValues[timing]}
-Срок: ${dueDateValues[dueDate]}
-Тип видео: ${videoType}
-Тип производства: ${graphicsType}
-Размещение: ${purposeType}
-Актеры, модели: ${hasActor ? 'Да' : 'Нет'}
-Диктор: ${hasSpeaker ? 'Да' : 'Нет'}
-Локации: ${hasLocation ? 'Да' : 'Нет'}
-Имя: ${name}
-Контакт: ${contacts}
-Цена: ${totalPrice} USD
-`;
+    // Create form data object
+    const formData = {
+      timing_value: timingValues[timing],
+      due_date_value: dueDateValues[dueDate],
+      video_type: videoType,
+      graphics: graphicsType,
+      purpose: purposeType,
+      actor: hasActor,
+      speaker: hasSpeaker,
+      location: hasLocation,
+      name: name,
+      contacts: contacts,
+      total: totalPrice
+    };
     
-    // Send to Telegram bot
-    fetch('https://api.telegram.org/bot7600038581:AAHwCKHfXp61Txg8HuU1mAL6KbvoVXTJn4o/sendMessage', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        chat_id: '542053490',
-        text: 'Данные формы:\n' + formattedMessage
-      })
-    })
-    .then(response => {
-      if (!response.ok) {
-        throw new Error('Network response was not ok');
+    try {
+      // Submit through our backend API
+      const response = await axios.post(`${API}/order`, formData);
+      
+      if (!response.data.success) {
+        throw new Error('API returned error');
       }
-      return response.json();
-    })
-    .then(data => {
+      
       // Show success message
       const formBlock = document.querySelector('.form-block.form-main');
       const successBlock = document.querySelector('.form-block.form-success');
@@ -291,11 +281,19 @@ Sklad Production — это независимый кинопродакшн, к�
       } else {
         alert('Спасибо! Скоро мы свяжемся с вами для уточнения всех подробностей.');
       }
-    })
-    .catch(error => {
+    } catch (error) {
       console.error('Error:', error);
       alert('Произошла ошибка при отправке формы. Пожалуйста, попробуйте еще раз.');
-    });
+      
+      // Show failure message
+      const formBlock = document.querySelector('.form-block.form-main');
+      const failureBlock = document.querySelector('.form-block.form-failure');
+      
+      if (formBlock && failureBlock) {
+        formBlock.style.display = 'none';
+        failureBlock.style.display = 'block';
+      }
+    }
   };
   
   return (
