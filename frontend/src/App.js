@@ -801,7 +801,7 @@ Sklad Production — это независимый кинопродакшн, к�
         
         <dl className="footer-column">
           <dt>NAVIGATE</dt>
-          <dd><a href="#about">О нас</a></dd>
+          <dd><a href="/about.html">О нас</a></dd>
           <dd><a href="#suggest">Предложить проект</a></dd>
           <dd><a href="#contact">Контакты</a></dd>
           <dd><a href="#privacy">Политика конфиденциальности</a></dd>
