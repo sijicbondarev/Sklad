@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="ru" data-url="https://sklad.production">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+  <meta name="msapplication-TileColor" content="#000000">
+  
+  <link rel="icon" href="/assets/favicon/favicon.svg" sizes="32x32" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon/favicon.svg" sizes="16x16" type="image/svg+xml">
+  
+  <!-- Preload the fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Social Images -->
+  <meta content="https://images.unsplash.com/photo-1632187989763-c9c620420b4d" itemprop="image">
+  <meta content="https://images.unsplash.com/photo-1632187989763-c9c620420b4d" name="twitter:image">
+  <meta content="https://images.unsplash.com/photo-1632187989763-c9c620420b4d" property="og:image">
+  
+  <!-- Titles -->
+  <meta content="Рекламный ролик для Astana Bank - SKLAD.PRODUCTION" itemprop="name">
+  <meta content="Рекламный ролик для Astana Bank - SKLAD.PRODUCTION" name="twitter:title">
+  <meta content="Рекламный ролик для Astana Bank - SKLAD.PRODUCTION" property="og:title">
+  <meta content="SKLAD.PRODUCTION" property="og:site_name">
+  
+  <!-- Descriptions -->
+  <meta content="Корпоративный рекламный ролик для Astana Bank, созданный командой SKLAD.PRODUCTION" name="description">
+  <meta content="Корпоративный рекламный ролик для Astana Bank, созданный командой SKLAD.PRODUCTION" itemprop="description">
+  <meta content="Корпоративный рекламный ролик для Astana Bank, созданный командой SKLAD.PRODUCTION" name="twitter:description">
+  <meta content="Корпоративный рекламный ролик для Astana Bank, созданный командой SKLAD.PRODUCTION" property="og:description">
+  
+  <!-- Stylesheets -->
+  <link href="/src/App.css" rel="stylesheet">
+  <style>
+    /* Article specific styles */
+    :root {
+      --text-color: #000;
+      --bg-color: #fff;
+      --accent-color: #555;
+      --secondary-bg: #f5f5f5;
+      --border-color: #ddd;
+    }
+    
+    .inverted {
+      --text-color: #fff;
+      --bg-color: #0d0d0d;
+      --accent-color: #aaa;
+      --secondary-bg: #1a1a1a;
+      --border-color: #333;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .header-home {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+    
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .menu-item {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-color);
+      font-size: 1rem;
+    }
+    
+    .scheme-toggle {
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .article-container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .article-header {
+      margin-bottom: 40px;
+    }
+    
+    .article-title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    
+    .article-subtitle {
+      font-size: 1.5rem;
+      color: var(--accent-color);
+      margin-top: 0;
+    }
+    
+    .article-meta {
+      color: var(--accent-color);
+      margin-bottom: 20px;
+    }
+    
+    .article-image {
+      width: 100%;
+      height: auto;
+      margin-bottom: 40px;
+      border-radius: 4px;
+      filter: grayscale(50%);
+    }
+    
+    .article-content {
+      line-height: 1.8;
+    }
+    
+    .article-content p {
+      margin-bottom: 20px;
+    }
+    
+    .article-details {
+      background-color: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 4px;
+      margin: 40px 0;
+    }
+    
+    .article-details h3 {
+      margin-top: 0;
+    }
+    
+    .article-details ul {
+      padding-left: 20px;
+    }
+    
+    .article-video {
+      width: 100%;
+      aspect-ratio: 16/9;
+      margin: 40px 0;
+    }
+    
+    .article-cta {
+      background-color: var(--secondary-bg);
+      padding: 30px;
+      border-radius: 4px;
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .article-cta h3 {
+      margin-top: 0;
+    }
+    
+    .article-cta-button {
+      display: inline-block;
+      padding: 12px 24px;
+      background-color: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    
+    .footer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 60px 20px;
+      background-color: var(--secondary-bg);
+      margin-top: 40px;
+    }
+    
+    .footer-column {
+      text-align: left;
+    }
+    
+    .footer-column img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .footer-column h2 {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    
+    .footer-column dt {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    .footer-column dd {
+      margin: 0 0 10px;
+    }
+    
+    .footer-column a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+    
+    .footer-column a:hover {
+      text-decoration: underline;
+    }
+  </style>
+  
+  <script>if (localStorage.theme === 'inverted') { document.documentElement.classList.add('inverted') }</script>
+</head>
+<body>
+  <header class="header">
+    <a class="header-home" href="/" aria-label="Homepage">SKLAD.PRODUCTION</a>
+    <nav class="menu">
+      <button class="menu-item scheme-toggle" id="theme-toggle" title="Change color scheme" role="presentation"></button>
+      <a class="menu-item" href="/">Главная</a>
+    </nav>
+  </header>
+  
+  <div class="article-container">
+    <div class="article-header">
+      <h1 class="article-title">Рекламный ролик для Astana Bank</h1>
+      <h2 class="article-subtitle">Корпоративное видео</h2>
+      <div class="article-meta">Апрель 2023 · Продолжительность: 60 сек</div>
+    </div>
+    
+    <img src="https://images.unsplash.com/photo-1632187989763-c9c620420b4d" alt="Съемка рекламного ролика для Astana Bank" class="article-image">
+    
+    <div class="article-content">
+      <p>SKLAD Production разработал и создал рекламный ролик для Astana Bank, одного из ведущих финансовых учреждений в Казахстане. Задача включала в себя создание эмоционального и визуально привлекательного контента, который бы подчеркнул надежность, инновационность и клиентоориентированность банка.</p>
+      
+      <p>Концепция ролика основана на истории успешных клиентов, которые благодаря услугам Astana Bank смогли реализовать свои мечты. Мы использовали современные приемы съемки, включая аэросъемку, динамичные переходы и высококачественный монтаж.</p>
+      
+      <iframe class="article-video" src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="Рекламный ролик для Astana Bank" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+      
+      <div class="article-details">
+        <h3>Детали проекта:</h3>
+        <ul>
+          <li><strong>Клиент:</strong> Astana Bank</li>
+          <li><strong>Категория:</strong> Корпоративное видео</li>
+          <li><strong>Срок выполнения:</strong> 3 недели</li>
+          <li><strong>Локации:</strong> Астана, Алматы</li>
+          <li><strong>Команда:</strong> 15 человек (режиссер, оператор, осветители, гримеры, актеры)</li>
+          <li><strong>Оборудование:</strong> RED KOMODO 6K, Anamorphic Lenses, DJI Inspire 2</li>
+          <li><strong>Постпродакшн:</strong> DaVinci Resolve, After Effects</li>
+        </ul>
+      </div>
+      
+      <p>Съемки проходили в течение 5 дней в различных локациях Астаны и Алматы, включая головной офис банка, городские пейзажи и природные ландшафты. Мы работали с профессиональными актерами и реальными клиентами банка, чтобы создать аутентичное повествование.</p>
+      
+      <p>Особое внимание было уделено цветокоррекции и звуковому оформлению. Для ролика была написана оригинальная музыкальная композиция, которая отражает уверенность и стабильность — ключевые ценности бренда Astana Bank.</p>
+      
+      <p>Результатом нашей работы стал высококачественный рекламный ролик, который был показан на национальном телевидении и в цифровых каналах банка, получив положительные отзывы от клиентов и руководства банка.</p>
+      
+      <div class="article-cta">
+        <h3>Хотите создать похожий проект?</h3>
+        <p>Мы готовы разработать и реализовать рекламный ролик для вашей компании с учетом всех требований и особенностей вашего бренда.</p>
+        <a href="/" class="article-cta-button">Связаться с нами</a>
+      </div>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-column">
+      <img src="https://images.unsplash.com/photo-1548450847-8a9a5cc3968f" alt="Sklad Production" style="filter: grayscale(50%) brightness(100%) contrast(90%)">
+      <h2>SKLAD.PRODUCKTION ® We store a huge number of creative ideas in our warehouse. Just take them.</h2>
+    </div>
+    
+    <dl class="footer-column">
+      <dt>NAVIGATE</dt>
+      <dd><a href="/">Главная</a></dd>
+      <dd><a href="/about">О нас</a></dd>
+      <dd><a href="/contact">Контакты</a></dd>
+      <dd><a href="/privacy">Политика конфиденциальности</a></dd>
+    </dl>
+    
+    <dl class="footer-column">
+      <dt>СВЯЗАТЬСЯ С НАМИ</dt>
+      <dd><a target="_blank" href="https://twitter.com" rel="noreferrer">Twitter</a></dd>
+      <dd><a target="_blank" href="https://instagram.com" rel="noreferrer">Instagram</a></dd>
+      <dd><a target="_blank" href="https://t.me/" rel="noreferrer">Telegram</a></dd>
+      <dd><a target="_blank" href="https://facebook.com" rel="noreferrer">Facebook</a></dd>
+    </dl>
+  </footer>
+  
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      if (document.documentElement.classList.contains('inverted')) {
+        document.documentElement.classList.remove('inverted');
+        localStorage.theme = '';
+      } else {
+        document.documentElement.classList.add('inverted');
+        localStorage.theme = 'inverted';
+      }
+    });
+  </script>
+</body>
+</html>
