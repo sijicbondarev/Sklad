@@ -169,24 +169,18 @@ function App() {
       return;
     }
     
-    // Show "typing" indicator
-    typeText("Отправка запроса...");
+    // Show "typing" indicator in the response container
+    setResponseText("Отправка запроса...");
     
     try {
-      // Send message to Telegram bot
-      const telegramResponse = await fetch('https://api.telegram.org/bot7600038581:AAHwCKHfXp61Txg8HuU1mAL6KbvoVXTJn4o/sendMessage', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          chat_id: '542053490',
-          text: `Новый запрос от пользователя:\n${query}`
-        })
+      // Use our backend API instead of direct Telegram API call
+      const apiResponse = await axios.post(`${API}/send-telegram`, {
+        chat_id: '542053490',
+        text: `Новый запрос от пользователя:\n${query}`
       });
       
-      if (!telegramResponse.ok) {
-        throw new Error(`Ошибка Telegram API: ${telegramResponse.statusText}`);
+      if (!apiResponse.data.success) {
+        throw new Error(`Ошибка API: ${apiResponse.data.message}`);
       }
       
       // Simulate response
