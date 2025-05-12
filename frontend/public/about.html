@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="ru" data-url="https://sklad.production">
+<head>
+  <!-- Meta Tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#000" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#fff" media="(prefers-color-scheme: light)">
+  <meta name="msapplication-TileColor" content="#000000">
+  
+  <link rel="icon" href="/assets/favicon/favicon.svg" sizes="32x32" type="image/svg+xml">
+  <link rel="icon" href="/assets/favicon/favicon.svg" sizes="16x16" type="image/svg+xml">
+  
+  <!-- Preload the fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+  
+  <!-- Social Images -->
+  <meta content="https://images.unsplash.com/photo-1548450847-8a9a5cc3968f" itemprop="image">
+  <meta content="https://images.unsplash.com/photo-1548450847-8a9a5cc3968f" name="twitter:image">
+  <meta content="https://images.unsplash.com/photo-1548450847-8a9a5cc3968f" property="og:image">
+  
+  <!-- Titles -->
+  <meta content="О нас - SKLAD.PRODUCTION" itemprop="name">
+  <meta content="О нас - SKLAD.PRODUCTION" name="twitter:title">
+  <meta content="О нас - SKLAD.PRODUCTION" property="og:title">
+  <meta content="SKLAD.PRODUCTION" property="og:site_name">
+  
+  <!-- Descriptions -->
+  <meta content="Sklad Production — независимый кинопродакшн, создающий рекламные ролики, кино и телесериалы в Казахстане" name="description">
+  <meta content="Sklad Production — независимый кинопродакшн, создающий рекламные ролики, кино и телесериалы в Казахстане" itemprop="description">
+  <meta content="Sklad Production — независимый кинопродакшн, создающий рекламные ролики, кино и телесериалы в Казахстане" name="twitter:description">
+  <meta content="Sklad Production — независимый кинопродакшн, создающий рекламные ролики, кино и телесериалы в Казахстане" property="og:description">
+  
+  <!-- Stylesheets -->
+  <style>
+    /* About page specific styles */
+    :root {
+      --text-color: #000;
+      --bg-color: #fff;
+      --accent-color: #555;
+      --secondary-bg: #f5f5f5;
+      --border-color: #ddd;
+    }
+    
+    .inverted {
+      --text-color: #fff;
+      --bg-color: #0d0d0d;
+      --accent-color: #aaa;
+      --secondary-bg: #1a1a1a;
+      --border-color: #333;
+    }
+    
+    body {
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      transition: background-color 0.3s, color 0.3s;
+    }
+    
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .header-home {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: var(--text-color);
+    }
+    
+    .menu {
+      display: flex;
+      gap: 20px;
+    }
+    
+    .menu-item {
+      background: none;
+      border: none;
+      cursor: pointer;
+      color: var(--text-color);
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    
+    .scheme-toggle {
+      width: 24px;
+      height: 24px;
+      background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>');
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+    
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 40px 20px;
+    }
+    
+    .page-header {
+      margin-bottom: 40px;
+      text-align: center;
+    }
+    
+    .page-title {
+      font-size: 2.5rem;
+      margin-bottom: 20px;
+    }
+    
+    .page-subtitle {
+      font-size: 1.2rem;
+      color: var(--accent-color);
+      max-width: 700px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+    
+    .about-section {
+      margin-bottom: 60px;
+    }
+    
+    .about-section-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+      position: relative;
+      padding-bottom: 10px;
+    }
+    
+    .about-section-title::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent-color);
+    }
+    
+    .about-content {
+      line-height: 1.8;
+    }
+    
+    .about-content p {
+      margin-bottom: 20px;
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 30px;
+      margin-top: 40px;
+    }
+    
+    .team-member {
+      text-align: center;
+    }
+    
+    .team-member-image {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 15px;
+      filter: grayscale(100%);
+      transition: filter 0.3s;
+    }
+    
+    .team-member:hover .team-member-image {
+      filter: grayscale(0%);
+    }
+    
+    .team-member-name {
+      font-size: 1.2rem;
+      margin: 0 0 5px;
+    }
+    
+    .team-member-role {
+      color: var(--accent-color);
+      margin: 0 0 10px;
+    }
+    
+    .services-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .service-item {
+      background-color: var(--secondary-bg);
+      padding: 20px;
+      border-radius: 4px;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .service-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .service-title {
+      font-size: 1.2rem;
+      margin: 0 0 10px;
+    }
+    
+    .service-description {
+      margin: 0;
+      line-height: 1.6;
+    }
+    
+    .clients-list {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 40px;
+      margin-top: 30px;
+    }
+    
+    .client-logo {
+      height: 60px;
+      filter: grayscale(100%) opacity(0.7);
+      transition: filter 0.3s;
+    }
+    
+    .client-logo:hover {
+      filter: grayscale(0%) opacity(1);
+    }
+    
+    .cta-section {
+      background-color: var(--secondary-bg);
+      padding: 60px 20px;
+      text-align: center;
+      margin-top: 60px;
+    }
+    
+    .cta-title {
+      font-size: 2rem;
+      margin: 0 0 20px;
+    }
+    
+    .cta-description {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 30px;
+      line-height: 1.6;
+    }
+    
+    .cta-button {
+      display: inline-block;
+      padding: 15px 30px;
+      background-color: var(--accent-color);
+      color: #fff;
+      text-decoration: none;
+      border-radius: 4px;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s;
+    }
+    
+    .cta-button:hover {
+      background-color: #333;
+    }
+    
+    .footer {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 40px;
+      padding: 60px 20px;
+      background-color: var(--secondary-bg);
+      margin-top: 40px;
+    }
+    
+    .footer-column {
+      text-align: left;
+    }
+    
+    .footer-column img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 20px;
+    }
+    
+    .footer-column h2 {
+      font-size: 1rem;
+      font-weight: normal;
+      margin-bottom: 20px;
+    }
+    
+    .footer-column dt {
+      font-weight: bold;
+      margin-bottom: 15px;
+    }
+    
+    .footer-column dd {
+      margin: 0 0 10px;
+    }
+    
+    .footer-column a {
+      color: var(--text-color);
+      text-decoration: none;
+    }
+    
+    .footer-column a:hover {
+      text-decoration: underline;
+    }
+    
+    @media (max-width: 768px) {
+      .team-grid,
+      .services-list {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .page-title {
+        font-size: 2rem;
+      }
+      
+      .team-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+  
+  <script>if (localStorage.theme === 'inverted') { document.documentElement.classList.add('inverted') }</script>
+</head>
+<body>
+  <header class="header">
+    <a class="header-home" href="/" aria-label="Homepage">SKLAD.PRODUCTION</a>
+    <nav class="menu">
+      <button class="menu-item scheme-toggle" id="theme-toggle" title="Change color scheme" role="presentation"></button>
+      <a class="menu-item" href="/">Главная</a>
+    </nav>
+  </header>
+  
+  <div class="container">
+    <div class="page-header">
+      <h1 class="page-title">О нас</h1>
+      <p class="page-subtitle">Sklad Production — это независимый кинопродакшн, который занимается созданием рекламных роликов, кино и телесериалов в Казахстане. Мы предлагаем полный цикл услуг, начиная от разработки идеи и сценария до финальной постпродакшн обработки.</p>
+    </div>
+    
+    <section class="about-section">
+      <h2 class="about-section-title">Наша история</h2>
+      <div class="about-content">
+        <p>SKLAD Production был основан в 2015 году группой профессионалов киноиндустрии с опытом работы на международных проектах. Начиная с небольших рекламных проектов, мы выросли до создания полномасштабных кинематографических и телевизионных произведений.</p>
+        <p>За годы работы мы сформировали уникальный подход к производству видеоконтента, сочетающий креативность и техническое мастерство. Наша философия заключается в создании визуальных историй, которые не только выполняют маркетинговые задачи, но и оставляют эмоциональный след у зрителя.</p>
+        <p>Сегодня SKLAD Production — это команда из более чем 30 профессионалов, включая режиссеров, операторов, продюсеров, сценаристов и специалистов по постпродакшну. Мы работаем с ведущими компаниями Казахстана и международными брендами, создавая контент высочайшего качества.</p>
+      </div>
+    </section>
+    
+    <section class="about-section">
+      <h2 class="about-section-title">Команда</h2>
+      <div class="about-content">
+        <p>Наша сила — в людях. Команда SKLAD Production состоит из талантливых профессионалов с опытом работы на крупных проектах в Казахстане и за рубежом. Мы постоянно обучаемся, следим за мировыми трендами и внедряем инновации в нашу работу.</p>
+        
+        <div class="team-grid">
+          <div class="team-member">
+            <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a" alt="Алексей Морозов" class="team-member-image">
+            <h3 class="team-member-name">Алексей Морозов</h3>
+            <p class="team-member-role">Основатель, Генеральный продюсер</p>
+          </div>
+          
+          <div class="team-member">
+            <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2" alt="Айгуль Нурланова" class="team-member-image">
+            <h3 class="team-member-name">Айгуль Нурланова</h3>
+            <p class="team-member-role">Креативный директор</p>
+          </div>
+          
+          <div class="team-member">
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e" alt="Рустем Кариев" class="team-member-image">
+            <h3 class="team-member-name">Рустем Кариев</h3>
+            <p class="team-member-role">Главный режиссер</p>
+          </div>
+          
+          <div class="team-member">
+            <img src="https://images.unsplash.com/photo-1619380061814-58f03707f082" alt="Диана Ержанова" class="team-member-image">
+            <h3 class="team-member-name">Диана Ержанова</h3>
+            <p class="team-member-role">Исполнительный продюсер</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="about-section">
+      <h2 class="about-section-title">Наши услуги</h2>
+      <div class="about-content">
+        <p>SKLAD Production предлагает полный цикл услуг по созданию видеоконтента для бизнеса, телевидения и цифровых платформ. Мы работаем как над отдельными элементами производства, так и над проектами под ключ.</p>
+        
+        <div class="services-list">
+          <div class="service-item">
+            <h3 class="service-title">Рекламные ролики</h3>
+            <p class="service-description">Разработка и создание коммерческих видеороликов для телевидения и интернет-платформ.</p>
+          </div>
+          
+          <div class="service-item">
+            <h3 class="service-title">Музыкальные клипы</h3>
+            <p class="service-description">Производство музыкальных видео для исполнителей и групп всех жанров.</p>
+          </div>
+          
+          <div class="service-item">
+            <h3 class="service-title">Корпоративное видео</h3>
+            <p class="service-description">Создание имиджевых, обучающих и презентационных видеоматериалов для компаний.</p>
+          </div>
+          
+          <div class="service-item">
+            <h3 class="service-title">Документальные фильмы</h3>
+            <p class="service-description">Производство документальных проектов на социально значимые и исторические темы.</p>
+          </div>
+          
+          <div class="service-item">
+            <h3 class="service-title">Кино и сериалы</h3>
+            <p class="service-description">Производство полнометражных фильмов и телевизионных сериалов.</p>
+          </div>
+          
+          <div class="service-item">
+            <h3 class="service-title">Аэросъемка</h3>
+            <p class="service-description">Профессиональная съемка с дронов для создания впечатляющих панорамных кадров.</p>
+          </div>
+          
+          <div class="service-item">
+            <h3 class="service-title">Анимация и 3D</h3>
+            <p class="service-description">Разработка и создание анимационного контента и 3D-моделирования.</p>
+          </div>
+          
+          <div class="service-item">
+            <h3 class="service-title">Постпродакшн</h3>
+            <p class="service-description">Монтаж, цветокоррекция, звуковой дизайн и визуальные эффекты.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+    <section class="about-section">
+      <h2 class="about-section-title">Наши клиенты</h2>
+      <div class="about-content">
+        <p>Мы гордимся нашими партнерскими отношениями с ведущими компаниями и организациями Казахстана и международными брендами. Каждый проект для нас — это возможность создать что-то уникальное и эффективное.</p>
+        
+        <div class="clients-list">
+          <img src="https://upload.wikimedia.org/wikipedia/ru/thumb/d/d4/Kaspi_Bank_logo.svg/320px-Kaspi_Bank_logo.svg.png" alt="Kaspi Bank" class="client-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Kazakhstan_Temir_Zholy_logo.svg/320px-Kazakhstan_Temir_Zholy_logo.svg.png" alt="Kazakhstan Temir Zholy" class="client-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Flag-map_of_Kazakhstan.svg/320px-Flag-map_of_Kazakhstan.svg.png" alt="Министерство туризма РК" class="client-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/KazMunayGas_New_Logo.svg/320px-KazMunayGas_New_Logo.svg.png" alt="KazMunayGas" class="client-logo">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Beeline_logo.svg/320px-Beeline_logo.svg.png" alt="Beeline Kazakhstan" class="client-logo">
+        </div>
+      </div>
+    </section>
+  </div>
+  
+  <div class="cta-section">
+    <div class="container">
+      <h2 class="cta-title">Готовы начать проект?</h2>
+      <p class="cta-description">Свяжитесь с нами, чтобы обсудить ваши идеи и получить консультацию по реализации вашего видеопроекта. Мы подберем оптимальное решение под ваши цели и бюджет.</p>
+      <a href="/" class="cta-button">Связаться с нами</a>
+    </div>
+  </div>
+  
+  <footer class="footer">
+    <div class="footer-column">
+      <img src="https://images.unsplash.com/photo-1548450847-8a9a5cc3968f" alt="Sklad Production" style="filter: grayscale(50%) brightness(100%) contrast(90%)">
+      <h2>SKLAD.PRODUCKTION ® We store a huge number of creative ideas in our warehouse. Just take them.</h2>
+    </div>
+    
+    <dl class="footer-column">
+      <dt>NAVIGATE</dt>
+      <dd><a href="/">Главная</a></dd>
+      <dd><a href="/about.html">О нас</a></dd>
+      <dd><a href="/">Контакты</a></dd>
+      <dd><a href="/">Политика конфиденциальности</a></dd>
+    </dl>
+    
+    <dl class="footer-column">
+      <dt>СВЯЗАТЬСЯ С НАМИ</dt>
+      <dd><a target="_blank" href="https://twitter.com" rel="noreferrer">Twitter</a></dd>
+      <dd><a target="_blank" href="https://instagram.com" rel="noreferrer">Instagram</a></dd>
+      <dd><a target="_blank" href="https://t.me/" rel="noreferrer">Telegram</a></dd>
+      <dd><a target="_blank" href="https://facebook.com" rel="noreferrer">Facebook</a></dd>
+    </dl>
+  </footer>
+  
+  <script>
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      if (document.documentElement.classList.contains('inverted')) {
+        document.documentElement.classList.remove('inverted');
+        localStorage.theme = '';
+      } else {
+        document.documentElement.classList.add('inverted');
+        localStorage.theme = 'inverted';
+      }
+    });
+  </script>
+</body>
+</html>
