@@ -731,7 +731,7 @@ Sklad Production — это независимый кинопродакшн, к�
       {/* Portfolio Grid */}
       <div className="grid grid-thumbs ba grid-home grid-infinite">
         <article className="thumb b">
-          <a className="thumb-content" href="#" rel="noreferrer" aria-label="View Feature">
+          <a className="thumb-content" href="/articles/reklama-astana-bank.html" rel="noreferrer" aria-label="View Feature">
             <h1 className="thumb-title">Рекламный ролик для Astana Bank</h1>
             <h2 className="thumb-subtitle">Корпоративное видео</h2>
             <figure className="thumb-container">
@@ -741,7 +741,7 @@ Sklad Production — это независимый кинопродакшн, к�
         </article>
         
         <article className="thumb b">
-          <a className="thumb-content" href="#" rel="noreferrer" aria-label="View Feature">
+          <a className="thumb-content" href="/articles/muzykalniy-klip-step.html" rel="noreferrer" aria-label="View Feature">
             <h1 className="thumb-title">Музыкальный клип "Степь"</h1>
             <h2 className="thumb-subtitle">Музыкальное видео</h2>
             <figure className="thumb-container">
@@ -755,7 +755,37 @@ Sklad Production — это независимый кинопродакшн, к�
             <h1 className="thumb-title">Документальный фильм "Великий Шелковый путь"</h1>
             <h2 className="thumb-subtitle">Исторический фильм</h2>
             <figure className="thumb-container">
-              <img className="thumbnail-image" src={IMAGES.SKLAD_PNG} alt="" loading="lazy" />
+              <img className="thumbnail-image" src={IMAGES.PORTFOLIO_3} alt="" loading="lazy" />
+            </figure>
+          </a>
+        </article>
+        
+        <article className="thumb b">
+          <a className="thumb-content" href="#" rel="noreferrer" aria-label="View Feature">
+            <h1 className="thumb-title">Аэросъемка для National Geographic</h1>
+            <h2 className="thumb-subtitle">Природная съемка</h2>
+            <figure className="thumb-container">
+              <img className="thumbnail-image" src={IMAGES.PORTFOLIO_4} alt="" loading="lazy" />
+            </figure>
+          </a>
+        </article>
+        
+        <article className="thumb b">
+          <a className="thumb-content" href="#" rel="noreferrer" aria-label="View Feature">
+            <h1 className="thumb-title">Корпоративное видео для KazMunayGas</h1>
+            <h2 className="thumb-subtitle">Промышленное видео</h2>
+            <figure className="thumb-container">
+              <img className="thumbnail-image" src={IMAGES.PORTFOLIO_5} alt="" loading="lazy" />
+            </figure>
+          </a>
+        </article>
+        
+        <article className="thumb b">
+          <a className="thumb-content" href="#" rel="noreferrer" aria-label="View Feature">
+            <h1 className="thumb-title">Имиджевый ролик Казахстан 2025</h1>
+            <h2 className="thumb-subtitle">Туристический ролик</h2>
+            <figure className="thumb-container">
+              <img className="thumbnail-image" src={IMAGES.PORTFOLIO_6} alt="" loading="lazy" />
             </figure>
           </a>
         </article>
